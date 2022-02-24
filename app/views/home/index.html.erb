@@ -1,0 +1,8 @@
+<div class="card" id="form">
+  <%= render 'articles/form' %>
+</div>
+<hr />
+<%= turbo_stream_from :articles %>
+<%= turbo_frame_tag :articles do %>
+  <%=render partial: 'articles/article', collection: @articles %>
+<% end %>
